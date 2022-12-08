@@ -99,6 +99,18 @@ public class Accelerometer : MonoBehaviour
         //takes pos of startpos
         //assigns pos of startpos to rigid.position
         //ACCELEROMETER
+        if (Application.isEditor)
+        {
+            if (Input.GetKey("left"))
+                rigid.AddForce(-MainCam.transform.right * speed);
+            if (Input.GetKey("right"))
+                rigid.AddForce(MainCam.transform.right * speed);
+            if (Input.GetKey("up"))
+                rigid.AddForce(MainCam.transform.forward * speed);
+            if (Input.GetKey("down"))
+                rigid.AddForce(-MainCam.transform.forward * speed);
+        }
+
         if (random == 1)
         {
             Vector3 tilt = Input.acceleration;

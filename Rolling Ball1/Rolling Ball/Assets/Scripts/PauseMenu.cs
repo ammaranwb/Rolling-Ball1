@@ -25,11 +25,9 @@ public class PauseMenu : MonoBehaviour
 
         Vector3 newpos = startpos.transform.localPosition;
         Ball.transform.localPosition = newpos;
-        print(cam.transform.rotation);
-        Quaternion newcampos = campos.transform.rotation;
-        cam.transform.rotation = newcampos;
-        print(cam.transform.rotation);
-        print(newcampos);
+
+        Vector3 newcampos = campos.transform.localPosition;
+        cam.transform.localPosition = newcampos;
 
         if (PlayerPrefs.GetInt("slvl") == 1)
         {
