@@ -95,9 +95,16 @@ public class First_Screen_Handle : MonoBehaviour
     }
     public void Play()
     {
+        if (AdsManager.Instance.interstitialMainMenu.IsLoaded())
+            AdsManager.Instance.ShowMainMenuInterstitial();
         LevelsPanel.SetActive(true);
         Panel1.SetActive(false);
 
+    }
+
+    public void loadindscreenoff()
+    {
+        print("xyz");
     }
     public void Settings()
     {
@@ -135,6 +142,8 @@ public class First_Screen_Handle : MonoBehaviour
     {
         SceneManager.LoadScene("SelectLevel");
     }
+
+    
 
     public void musicOn()
     {

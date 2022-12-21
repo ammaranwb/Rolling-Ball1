@@ -16,6 +16,7 @@ public class Finishlevel : MonoBehaviour
     int yourscore;
     public Accelerometer acc;
     private int var;
+    public bool wintriggered;
  
 
     private void Start()
@@ -29,27 +30,32 @@ public class Finishlevel : MonoBehaviour
     {
         if (other.gameObject.name == "Ball")
         {
-            numberOfunlockedLevels = PlayerPrefs.GetInt("levelsUnlocked");
-            collisionparticle.SetActive(true);
-            Win = true;
-            if (numberOfunlockedLevels <= levelToUnlock)
+            if (wintriggered)
             {
-                PlayerPrefs.SetInt("levelsUnlocked", numberOfunlockedLevels + 1);
-               
+                if (AdsManager.Instance.interstitialMainMenu.IsLoaded())
+                    AdsManager.Instance.ShowMainMenuInterstitial();
+                numberOfunlockedLevels = PlayerPrefs.GetInt("levelsUnlocked");
+                collisionparticle.SetActive(true);
+                Win = true;
+                if (numberOfunlockedLevels <= levelToUnlock)
+                {
+                    PlayerPrefs.SetInt("levelsUnlocked", numberOfunlockedLevels + 1);
 
 
-            }
 
-            var = PlayerPrefs.GetInt("totalscore");
-            PlayerPrefs.SetInt("totalscore", var + acc.currentscore);
+                }
+
+                var = PlayerPrefs.GetInt("totalscore");
+                PlayerPrefs.SetInt("totalscore", var + acc.currentscore);
 
 
 
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 Invoke("winPanel", 1);
-            Invoke("LoadNextLevel", 5);
+                Invoke("LoadNextLevel", 5);
 
-
+                wintriggered = false;
+            }
         }
 
         //if(other.gameObject.CompareTag("Ball") && once)

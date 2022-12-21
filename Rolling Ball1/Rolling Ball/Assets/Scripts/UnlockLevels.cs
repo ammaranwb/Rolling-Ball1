@@ -20,11 +20,11 @@ public class UnlockLevels : MonoBehaviour
         //PlayerPrefs.SetInt("levelsUnlocked", 6);
         unlockedLevelsNumber = PlayerPrefs.GetInt("levelsUnlocked");
         //uncmnt
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = false;
-            //lockpanel.GetComponent<Image>();
-        }
+        //for (int i = 0; i < buttons.Length; i++)
+        //{
+        //    buttons[i].interactable = false;
+        //    //lockpanel.GetComponent<Image>();
+        //}
         //uncmnt
 
         //inertacable levels should have green locks
@@ -48,7 +48,7 @@ public class UnlockLevels : MonoBehaviour
             buttons[i].interactable = true;
         }
 
-        for(int i=1; i< 10; i++)
+        for(int i=1; i< 20; i++)
         {
             if (buttons[i].interactable == true)
             {

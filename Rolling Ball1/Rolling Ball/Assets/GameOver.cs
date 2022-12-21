@@ -12,6 +12,8 @@ public class GameOver : MonoBehaviour
     {
         if (other.gameObject.name == "Ball")
         {
+            if (AdsManager.Instance.interstitialMainMenu.IsLoaded())
+                AdsManager.Instance.ShowMainMenuInterstitial();
             GameoverPanel.SetActive(true);
             fail = true;
         }

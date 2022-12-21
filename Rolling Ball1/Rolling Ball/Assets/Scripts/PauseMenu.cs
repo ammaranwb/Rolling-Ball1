@@ -61,6 +61,36 @@ public class PauseMenu : MonoBehaviour
         }else if (PlayerPrefs.GetInt("slvl") == 10)
         {
             Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 11)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 12)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 13)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 14)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 15)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 16)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 17)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 18)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 19)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
+        }else if (PlayerPrefs.GetInt("slvl") == 20)
+        {
+            Lvls[LvlNumber - 1].SetActive(true);
         }
             
         
@@ -70,9 +100,16 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
+        if (AdsManager.Instance.interstitialMainMenu.IsLoaded())
+            AdsManager.Instance.ShowMainMenuInterstitial();
         PauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
+        print("paused");
     }
+    //public void loadingscreen()
+    //{
+
+    //}
     
     public void Resume()
     {

@@ -74,6 +74,46 @@ public class LevelSelector : MonoBehaviour
     {
         SceneManager.LoadScene("Level01");
         PlayerPrefs.SetInt("slvl", 10);
+    }public void OpenScene11()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 11);
+    }public void OpenScene12()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 12);
+    }public void OpenScene13()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 13);
+    }public void OpenScene14()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 14);
+    }public void OpenScene15()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 15);
+    }public void OpenScene16()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 16);
+    }public void OpenScene17()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 17);
+    }public void OpenScene18()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 18);
+    }public void OpenScene19()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 19);
+    }public void OpenScene20()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("slvl", 20);
     }
 
 

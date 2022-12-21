@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Accelerometer : MonoBehaviour
 {
-    public bool isFlat = true;
+    public bool isFlat, obstacletriggered, bullettriggered = true;
     private Rigidbody rigid;
     public float speed = 5f;
     public bool isGrounded;
@@ -21,6 +21,7 @@ public class Accelerometer : MonoBehaviour
     int isMovinghor;
     public bool fail = false;
     public int currentscore;
+   
 
 
     private Quaternion calibrationQuaternion;
@@ -184,10 +185,18 @@ public class Accelerometer : MonoBehaviour
     {
         if (collision.gameObject.tag == "obstacle")
         {
-            Debug.Log("destroyed the ball");
-            //transform.position = startpos;
-            gameoverPanel.SetActive(true);
-            fail = true;
+            if (obstacletriggered)
+            {
+                if (AdsManager.Instance.interstitialMainMenu.IsLoaded())
+                    AdsManager.Instance.ShowMainMenuInterstitial();
+                Debug.Log("destroyed the ball");
+                //transform.position = startpos;
+                gameoverPanel.SetActive(true);
+                fail = true;
+
+                obstacletriggered = false;
+            }
+            
         }
     }
 
@@ -242,8 +251,16 @@ public class Accelerometer : MonoBehaviour
 
         if (other.tag == "bullet")
         {
-            gameoverPanel.SetActive(true);
-            fail = true;
+            if (bullettriggered)
+            {
+                if (AdsManager.Instance.interstitialMainMenu.IsLoaded())
+                    AdsManager.Instance.ShowMainMenuInterstitial();
+                gameoverPanel.SetActive(true);
+                fail = true;
+
+                bullettriggered = false;
+            }
+            
 
         }
     }
